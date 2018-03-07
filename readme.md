@@ -1,35 +1,32 @@
-# golang版支付宝SDK！
+# golang version Alipay SDK!
 
-做最好的支付宝sdk，大家的支持就是作者最大的动力！
 
-## 安装
+## Installation
 
 ~~~ go
-go get github.com/ascoders/alipay
+go get github.com/jgall/alipay
 ~~~
 
-## 初始化
+## Initialization
 
 ~~~ go
 alipay := alipay.Client{
-	Partner   : "", // 合作者ID
-	Key       : "", // 合作者私钥
-	ReturnUrl : "", // 同步返回地址
-	NotifyUrl : "", // 网站异步返回地址
-	Email     : "", // 网站卖家邮箱地址
+	Partner   : "", // Your Partner ID
+	Key       : "", // Yoru Partner private Key
+	ReturnUrl : "", // Synchronous return address
+	NotifyUrl : "", // Async return address (no redirect)
+	Email     : "", // Seller email address
 }
 ~~~
 
-alipay升级到2.0版本，[api_v1.0](doc/v1.md)依旧兼容
-
-## 生成提交表单
+## Generate a submission form
 
 ~~~ go
 form := alipay.Form(alipay.Options{
-	OrderId:  "123",	// 唯一订单号
-	Fee:      99.8,		// 价格
-	NickName: "翱翔大空",	// 用户昵称，支付页面显示用
-	Subject:  "充值100",	// 支付描述，支付页面显示用
+	OrderId:  "123",	// The order ID for tracking orders
+	Fee:      99.8,		// Price
+	NickName: "John Smith",	// user name
+	Subject:  "5 apples",	// Paymet description
 })
 ~~~
 
